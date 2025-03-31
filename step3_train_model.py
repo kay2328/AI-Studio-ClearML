@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from clearml import Task, Logger
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
 
 
 # Connecting ClearML with the current process,
@@ -15,7 +19,7 @@ args = {
 task.connect(args)
 
 # only create the task, we will actually execute it later
-task.execute_remotely()
+# task.execute_remotely()
 
 print('Retrieving Iris dataset')
 dataset_task = Task.get_task(task_id=args['dataset_task_id'])
@@ -25,10 +29,6 @@ y_train = dataset_task.artifacts['y_train'].get()
 y_test = dataset_task.artifacts['y_test'].get()
 print('Iris dataset loaded')
 
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader, TensorDataset
 
 # Define a simple neural network
 class SimpleNN(nn.Module):

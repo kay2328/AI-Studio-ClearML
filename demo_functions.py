@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 import torch.nn as nn
-from clearml import Task
 import torch.optim as optim
 import pandas as pd
 from clearml import Task, Dataset
