@@ -113,7 +113,7 @@ python step3_train_model.py
 ## 📘 References
 
 - [ClearML Documentation](https://clear.ml/docs)
-- [ClearML Pipelines Guide](https://clear.ml/docs/latest/docs/guides/pipeline_controller)
+- [ClearML Pipelines Guide](https://clear.ml/docs/latest/docs/getting_started/building_pipelines)
 - [ClearML GitHub](https://github.com/allegroai/clearml)
 
 ---
