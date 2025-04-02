@@ -77,6 +77,17 @@ python step3_train_model.py
 
 These will appear in your ClearML dashboard and serve as base tasks for the pipeline.
 
+#### Step 1.5: Initial ClearML Queue
+Create Queue with name as pipeline (or your customized one), ensure it is consistent in pipeline_from_tasks.py
+```
+pipe.start(queue="pipeline")
+```
+![image](https://github.com/user-attachments/assets/f650dc61-8f44-48a4-ac17-8b8bd1087133)
+
+Run the agent for queue worker:
+![image](https://github.com/user-attachments/assets/b7edfe7e-6c35-4155-a8cd-45217cf48399)
+
+
 #### Step 2: Run the Pipeline
 
 Once all base tasks are registered, run the pipeline:
