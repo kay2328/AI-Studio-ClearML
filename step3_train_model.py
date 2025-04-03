@@ -84,6 +84,7 @@ h = .02  # step size in the mesh
 xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 plt.figure(1, figsize=(4, 3))
 
+
 plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, edgecolors='k', cmap=plt.cm.Paired)
 plt.xlabel('Sepal length')
 plt.ylabel('Sepal width')
@@ -95,5 +96,6 @@ plt.yticks(())
 
 plt.title('Iris Types')
 plt.show()
+plt.savefig('iris_plot.png')
 
 print('Done')

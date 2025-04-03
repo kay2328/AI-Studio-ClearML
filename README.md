@@ -69,8 +69,8 @@ To use a task-based pipeline, follow these steps:
 
 #### Step 1: Register the Base Tasks
 
-Before running the pipeline, execute the following scripts **once** to create reusable ClearML Tasks:
-> **Note:** When running for the first time, comment out `task.execute_remotely()` in the each .py file of the three tasks to successfully create a task template.
+**Before running the pipeline, execute the following scripts \*\*once\*\* to create reusable ClearML Tasks:**
+> **Note:** When running for the first time, comment out \`task.execute_remotely()\` in the each .py file of the three tasks to successfully create a task template.
 
 ```bash
 # Step 1: Upload dataset
@@ -145,6 +145,7 @@ python step3_train_model.py
 This project is developed and maintained by:
 
 - **Jacoo-Zhao** (GitHub: [@Jacoo-Zhao](https://github.com/Jacoo-Zhao))
+- **Zoe Lin** (Github: [@Zoe Lin](https://github.com/ZoeLinUTS))
 
 ---
 
