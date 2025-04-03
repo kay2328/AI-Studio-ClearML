@@ -30,9 +30,9 @@ if args['dataset_task_id']:
     print('Input task id={} artifacts {}'.format(args['dataset_task_id'], list(dataset_upload_task.artifacts.keys())))
     # download the artifact
     iris_pickle = dataset_upload_task.artifacts['dataset'].get_local_copy()
-# get the dataset from a direct url
-elif args['dataset_url']:
-    iris_pickle = StorageManager.get_local_copy(remote_url=args['dataset_url'])
+# # get the dataset from a direct url
+# elif args['dataset_url']:
+#     iris_pickle = StorageManager.get_local_copy(remote_url=args['dataset_url'])
 else:
     raise ValueError("Missing dataset link")
 
