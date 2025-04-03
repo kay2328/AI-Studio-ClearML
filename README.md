@@ -63,6 +63,8 @@ pip install clearml-agent
 
 ## 🛠️ How to Use
 
+### Using Colab: refer to ClearML_Pipeline_Demo.ipynb.
+
 ### 🔁 Option 1: Pipeline from Predefined ClearML Tasks
 
 To use a task-based pipeline, follow these steps:
