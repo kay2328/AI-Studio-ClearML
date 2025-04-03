@@ -11,7 +11,7 @@ This repository provides a minimal, reproducible example of how to use [ClearML]
 ├── work_dataset/                     # Dataset samples and usage examples
 ├── demo_functions.py                 # Base Functions from ClearML 
 ├── demo_using_artifacts_example.py  # Demonstrates artifact loading
-├── main.py                           # Entry point (optional)
+├── main.py                           # Entry point
 ├── pipeline_from_tasks.py           # Pipeline built from existing ClearML Tasks
 ├── step1_dataset_artifact.py        # Step 1: Upload dataset as artifact
 ├── step2_data_preprocessing.py      # Step 2: Preprocess dataset
@@ -54,6 +54,13 @@ Use [https://app.clear.ml](https://app.clear.ml) to register for a free account 
 
 ---
 
+### 3. Create a ClearML Agent
+- Install the ClearML agent on your machine or server.
+```bash
+pip install clearml-agent
+```
+---
+
 ## 🛠️ How to Use
 
 ### 🔁 Option 1: Pipeline from Predefined ClearML Tasks
@@ -63,6 +70,7 @@ To use a task-based pipeline, follow these steps:
 #### Step 1: Register the Base Tasks
 
 Before running the pipeline, execute the following scripts **once** to create reusable ClearML Tasks:
+> **Note:** When running for the first time, comment out `task.execute_remotely()` in the each .py file of the three tasks to successfully create a task template.
 
 ```bash
 # Step 1: Upload dataset
@@ -108,6 +116,8 @@ This version demonstrates using `add_function_step(...)` to wrap Python logic as
 
 You can run each task separately as well:
 
+> **Note:** When running for the first time, comment out `task.execute_remotely()` in the code file to successfully create a task template.
+> 
 ```bash
 # Step 1: Upload dataset
 python step1_dataset_artifact.py
@@ -118,6 +128,7 @@ python step2_data_preprocessing.py
 # Step 3: Train model
 python step3_train_model.py
 ```
+
 
 ---
 

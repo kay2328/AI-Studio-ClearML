@@ -14,12 +14,12 @@ logger = Logger.current_logger()
 
 # Arguments
 args = {
-    'dataset_task_id': 'e5d87ceb1090414b889b91d8a7e3ea01',
+    'dataset_task_id': 'd0c40c01d6d84fa7826fa8f44dd7c110',
 }
 task.connect(args)
 
 # only create the task, we will actually execute it later
-# task.execute_remotely()
+task.execute_remotely()
 
 print('Retrieving Iris dataset')
 dataset_task = Task.get_task(task_id=args['dataset_task_id'])
@@ -28,7 +28,6 @@ X_test = dataset_task.artifacts['X_test'].get()
 y_train = dataset_task.artifacts['y_train'].get()
 y_test = dataset_task.artifacts['y_test'].get()
 print('Iris dataset loaded')
-
 
 # Define a simple neural network
 class SimpleNN(nn.Module):
