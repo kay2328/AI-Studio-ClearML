@@ -80,7 +80,9 @@ These will appear in your ClearML dashboard and serve as base tasks for the pipe
 #### Step 1.5: Initial ClearML Queue
 Create Queue with name as pipeline (or your customized one), ensure it is consistent in pipeline_from_tasks.py
 ```
-pipe.start(queue="pipeline")
+# pipe.start(queue="pipeline")
+clearml-agent daemon --queue pipeline --detached
+
 ```
 ![image](https://github.com/user-attachments/assets/f650dc61-8f44-48a4-ac17-8b8bd1087133)
 
