@@ -30,7 +30,6 @@ def run_pipeline():
 
     pipe.add_parameter(
         "url",
-        "https://files.community.clear.ml/examples%252F.pipelines%252FPipeline%20demo/stage_data.8f17b6316ce442ce8904f6fccb1763de/artifacts/dataset/f6d08388e9bc44c86cab497ad31403c4.iris_dataset.pkl",
         "dataset_url",
     )
 
@@ -46,15 +45,15 @@ def run_pipeline():
     pipe.add_step(
         name="stage_process",
         parents=["stage_data"],
-        base_task_project="examples",
         base_task_name="Pipeline step 2 process dataset",
+        base_task_project="examples",
         parameter_override={
-            "General/dataset_url": "${stage_data.artifacts.dataset.url}",
+            "General/dataset_task_id": "${stage_data.id}",
             "General/test_size": 0.25,
+            "General/random_state": 42
         },
-        pre_execute_callback=pre_execute_callback_example,
-        post_execute_callback=post_execute_callback_example,
     )
+
     pipe.add_step(
         name="stage_train",
         parents=["stage_process"],
