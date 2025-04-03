@@ -14,12 +14,12 @@ logger = Logger.current_logger()
 
 # Arguments
 args = {
-    'dataset_task_id': 'e5d87ceb1090414b889b91d8a7e3ea01',
+    'dataset_task_id': '', # replace the value only when you need debug locally
 }
 task.connect(args)
 
 # only create the task, we will actually execute it later
-# task.execute_remotely()
+task.execute_remotely() # After passing local testing, you should uncomment this command to initial task to ClearML
 
 print('Retrieving Iris dataset')
 dataset_task = Task.get_task(task_id=args['dataset_task_id'])
