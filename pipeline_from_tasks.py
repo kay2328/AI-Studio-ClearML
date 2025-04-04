@@ -25,7 +25,7 @@ def run_pipeline():
     # Connecting ClearML with the current pipeline,
     # from here on everything is logged automatically
     pipe = PipelineController(
-        name="Pipeline demo", project="examples", version="0.0.1", add_pipeline_tags=False
+        name="IrisPipeline", project="IrisProject", version="0.0.1", add_pipeline_tags=False
     )
 
     pipe.add_parameter(
@@ -33,20 +33,20 @@ def run_pipeline():
         "dataset_url",
     )
 
-    pipe.set_default_execution_queue("pipeline")
+    pipe.set_default_execution_queue("iris_s1")
 
     pipe.add_step(
         name="stage_data",
-        base_task_project="examples",
-        base_task_name="Pipeline step 1 dataset artifact",
+        base_task_project="IrisProject",
+        base_task_name="step1_data_upload",
         parameter_override={"General/dataset_url": "${pipeline.url}"},
     )
 
     pipe.add_step(
         name="stage_process",
         parents=["stage_data"],
-        base_task_name="Pipeline step 2 process dataset",
-        base_task_project="examples",
+        base_task_name="step2_data_preprocess",
+        base_task_project="IrisProject",
         parameter_override={
             "General/dataset_task_id": "${stage_data.id}",
             "General/test_size": 0.25,
@@ -57,8 +57,8 @@ def run_pipeline():
     pipe.add_step(
         name="stage_train",
         parents=["stage_process"],
-        base_task_project="examples",
-        base_task_name="Pipeline step 3 train model",
+        base_task_project="IrisProject",
+        base_task_name="step3_train_model",
         parameter_override={"General/dataset_task_id": "${stage_process.id}"},
     )
 
