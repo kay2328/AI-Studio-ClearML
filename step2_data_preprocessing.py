@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 # Connecting ClearML with the current process,
 # from here on everything is logged automatically
-task = Task.init(project_name="Iris_Project", task_name="step2_dataprocess")
+task = Task.init(project_name="IrisProject", task_name="step2_data_preprocess")
 
 # program arguments
 # Use either dataset_task_id to point to a tasks artifact or
