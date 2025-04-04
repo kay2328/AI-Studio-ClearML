@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # Connecting ClearML with the current process,
 # from here on everything is logged automatically
-task = Task.init(project_name="examples", task_name="Pipeline step 3 train model")
+task = Task.init(project_name="IrisProject", task_name="step3_train_model")
 logger = Logger.current_logger()
 
 # Arguments
