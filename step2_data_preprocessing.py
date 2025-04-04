@@ -12,7 +12,7 @@ task = Task.init(project_name="IrisProject", task_name="step2_data_preprocess")
 # use a direct url with dataset_url
 args = {
     'dataset_task_id': '',
-    'dataset_url': '',
+    #'dataset_url': '',
     'random_state': 42,
     'test_size': 0.2,
 }
